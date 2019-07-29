@@ -1,0 +1,13 @@
+td{
+  border:1px solid #ccc;
+}
+table,tr,th{
+  border:1px solid #ccc;
+}
+
+.show{
+  display:block;
+}
+.hide{
+  display:none;
+}

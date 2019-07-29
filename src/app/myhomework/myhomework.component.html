@@ -1,0 +1,45 @@
+<p>myhomework works!</p>
+
+<div>{{productList | json}}</div>
+<table>
+  <thead>
+      <tr>
+        <th>编号</th>
+        <th>名称</th>
+        <th>图片</th>
+        <th>上市否</th>
+        <th>生产日期</th>
+        <th>操作</th>
+      </tr>
+    </thead >
+    <tbody>
+      <tr  *ngIf="!productList.length" >
+        <td>加载中。。。。。。</td>
+      </tr>
+      <tr *ngFor="let p of  productList; let i=index; let o=even" :key="p">
+        <td>{{p.pid}}</td>
+        <td>{{p.pname}}</td>
+        <td>
+          <img [src]="p.pic" style="width:60px">
+        </td>
+        <td>{{p.isOnsale}}</td>
+        <td>{{p.pirthday}}</td>
+        <td>
+          <button (click)="doDelete(i)">删除</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+<h3>用户等级：{{userLevel}}</h3>
+<div [ngSwitch]="userLevel">
+  <p *ngSwitchCase="1">白金用户</p>
+  <p *ngSwitchCase="2">黄金用户</p>
+  <p *ngSwitchCase="3">白银用户</p>
+  <p *ngSwitchCase="4">普通用户</p>
+  <p *ngSwitchDefault>其它用户</p>
+</div>
+
+<!-- 样式绑定方法一 -->
+<p [ngStyle]="myStyleObj">样式绑定（style）fls</p>
+<!-- 样式绑定方法二 -->
+<p [ngClass]="myClassObj">样式绑定（class方式绑定）</p>

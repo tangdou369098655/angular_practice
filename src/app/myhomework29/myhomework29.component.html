@@ -1,0 +1,10 @@
+
+<div>
+  <p>myhomework29 works!</p>
+  <h3>注册新用户</h3>
+  用户名：<input type="text" [(ngModel)]="uname" (ngModelChange)="doUnameChange()">
+  <span [ngClass]="unameClass">{{unameMsg}}</span><br>
+  密&emsp;码：<input type="password" [(ngModel)]="upwd">
+  <span></span><br>
+  <button (click)="doSubmit()">提交</button>
+</div>

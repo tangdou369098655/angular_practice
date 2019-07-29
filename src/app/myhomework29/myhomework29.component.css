@@ -1,0 +1,15 @@
+div{
+  background-color: #aaf;
+}
+.err{
+background-color: #fcc;
+color:#a00
+}
+.success{
+background-color: #cfc;
+color:#0a0;
+}
+.primary{
+background-color: rgb(65, 64, 64);
+color:#fff
+}

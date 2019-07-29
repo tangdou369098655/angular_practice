@@ -1,0 +1,41 @@
+<p>双向数据绑定</p>
+<!-- view -->
+<!-- 注意问题：必须把绑定写到前面 捕获改变写在后边否则会有意想不到的发生 ，会延迟捕获 -->
+<!-- 事件监听就是用这个 -->
+用户名：
+<input type="text" [(ngModel)]="userName" (ngModelChange)="doChange()">
+<p>{{userName}}</p>
+密码：
+<input type="password" [(ngModel)]="userPwd" (ngModelChange)="doPwdChange()">
+<span>{{userPwdMsg}}</span>
+<p>{{userPwd}}</p>
+
+
+<h3>代办事项列表</h3>
+<input type="text" [(ngModel)]="userInput" >
+<button (click)="doAdd()">添加新事项</button>
+<hr>
+<p *ngIf="todoList.length===0">您目前没有代办事项</p>
+<ul>
+  <li *ngFor="let todo of todoList;let i=index;">
+    <span>{{todo}}</span>
+    <button (click)="doDelete(i)">删除</button>
+  </li>
+</ul>
+
+<h2>过滤器</h2>
+<p>{{uname | uppercase}}</p>
+<p>{{uname | lowercase}}</p>
+<span>{{uname | slice:2}}</span> 从2开始截取后边的
+<p>{{uname | slice:2:6}}</p>2-6
+<p>{{uname | slice:0:6}}</p>
+<p>{{  {'uname':"dingding",age:20} | json }}</p>
+<p>{{0 | date:'yyyy-mm-dd HH:mm:ss'}}</p>
+<p>{{13232.34343|number}}</p>
+<p>{{13232.3433|number:'6.2-3'}}</p>
+只留2位小数
+<p>{{13232.3433|number:'6.2-2'}}</p>
+货币   小数点以后只有2位
+<p>{{13232.34343|currency}}</p>
+人民币货币 小数点以后只有2位
+<p>{{13232.34343|currency:'￥'}}</p>

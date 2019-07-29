@@ -1,0 +1,13 @@
+.blueTheme{
+  background: rgb(215, 215, 250);
+  color: #00a;
+}
+.greenTheme{
+  background: rgb(194, 216, 191);
+  color: #027c58;
+}
+.darkTheme{
+  background: rgb(14, 14, 22);
+  color: rgb(240, 240, 245);
+}
+
